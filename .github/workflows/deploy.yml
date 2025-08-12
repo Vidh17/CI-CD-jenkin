@@ -27,8 +27,11 @@ jobs:
         host: ${{ secrets.EC2_HOST }}
         username: ${{ secrets.EC2_USER }}
         key: ${{ secrets.EC2_SSH_KEY }}
+        port: 22
+        timeout: 30s
+        command_timeout: 10m
         script: |
           cd ~/ecommerce-app/myweb
-          docker-compose down
+          docker-compose down || true
           docker-compose build --no-cache
           docker-compose up -d
