@@ -1,28 +1,12 @@
 version: '3.9'
 
 services:
-  web:
-    build:
-      context: ../myweb  # Set the correct build context
-    ports:
-<<<<<<< HEAD
-      - "8000:8000"
-    volumes:
-      - "../myweb:/app"  # Ensure the correct path
-    environment:
-      - DEBUG=True
-=======
-<<<<<<< HEAD
-      - "80:8000"
-    volumes:
-      - "../myweb:/app"  # Ensure the correct path
-    environment:
-      - DEBUG=True
-=======
-      - "8000:8000"
-    volumes:
-      - "../myweb:/app"  # Ensure the correct path
-    environment:
-      - DEBUG=True
->>>>>>> dfd0b70 (second code)
->>>>>>> 08695d2 (12.50 pm)
+web:
+  build:
+    context: ../myweb  # Set the correct build context
+  ports:
+    - "80:8000"
+  volumes:
+    - "../myweb:/app"  # Ensure the correct path
+  environment:
+    - DEBUG=True
